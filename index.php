@@ -21,9 +21,11 @@ else {
 		$res=$stm->get_result();
 		while($resultado = $res->fetch_assoc()){
 			echo '<a href="filmes_show.php?filme='.$resultado['id_filme'].'">';
-			echo '<a href="filmes_edit.php?filme='.$resultado['id_filme'].'">edit</a>';
+			
 			echo $resultado["titulo"];
-			echo "</a>";
+			echo "</a> ";
+			echo '<a href="filmes_edit.php?filme='.$resultado['id_filme'].'"> edit</a>';
+			echo '<a href="filmes_delete.php?filme='.$resultado['id_filme'].'"> delete</a>';
 			echo "<br>";
 		}
 		$stm->close();
